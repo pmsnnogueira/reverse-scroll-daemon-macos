@@ -17,8 +17,8 @@ A lightweight macOS daemon that enables **natural scrolling on the trackpad** an
 ## Repository Structure
 
 ```
-scroll-reverse-daemon/
-├── scroll_reverse.c          # C daemon source code
+reverse-scroll-daemon-macos/
+├── reverse_scroll.c          # C daemon source code
 ├── setup.sh                  # Setup script to compile and install daemon
 └── README.md                 # Documentation
 ```
@@ -63,7 +63,7 @@ The daemon will now run at login and in the background.
 
 ### 4. Grant Accessibility permission
 1. Open **System Settings** → **Privacy & Security** → **Accessibility**
-2. Add the compiled binary (`scroll_reverse.out`) to allow it to intercept scroll events
+2. Add the compiled binary (`reverse_scroll.out`) to allow it to intercept scroll events
 
 ---
 
@@ -71,13 +71,13 @@ The daemon will now run at login and in the background.
 
 compile the c file
 ```bash
-clang -framework ApplicationServices -framework CoreFoundation scroll_reverse.c -o scroll_reverse.out
+clang -framework ApplicationServices -framework CoreFoundation reverse_scroll.c -o reverse_scroll.out
 ```
 
 You can run the daemon directly in terminal:
 
 ```bash
-./scroll_reverse
+./reverse_scroll
 ```
 
 - Press **Ctrl+C** to stop the daemon
@@ -94,7 +94,7 @@ You can run the daemon directly in terminal:
 
 ## Updating / Recompiling
 
-1. Edit `scroll_reverse.c` as needed
+1. Edit `reverse_scroll.c` as needed
 2. Re-run the setup script:
    ```bash
    ./setup.sh
@@ -111,7 +111,7 @@ To stop and remove the daemon:
 ```bash
 launchctl unload ~/Library/LaunchAgents/com.user.scrollreverse.plist
 rm ~/Library/LaunchAgents/com.user.scrollreverse.plist
-rm scroll_reverse
+rm reverse_scroll
 ```
 
 ---

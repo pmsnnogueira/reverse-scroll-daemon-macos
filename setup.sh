@@ -1,12 +1,12 @@
 #!/bin/bash
 
 DIR="$(pwd)"
-BIN="$DIR/scroll_reverse"
+BIN="$DIR/reverse_scroll"
 OUT="$BIN.out"
 
 # Compile the daemon
-echo "Compiling scroll_reverse..."
-clang -framework ApplicationServices -framework CoreFoundation scroll_reverse.c -o "$OUT"
+echo "Compiling reverse_scroll..."
+clang -framework ApplicationServices -framework CoreFoundation reverse_scroll.c -o "$OUT"
 
 if [ $? -ne 0 ]; then
     echo "Compilation failed!"
